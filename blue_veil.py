@@ -275,14 +275,14 @@ def first_pred(image_path) -> str:
     with open('clf.pkl', 'wb') as file:
         pickle.dump(eclf_stack, file)
 
-    print(classification_report(y_test, y_pred3))
+    #print(classification_report(y_test, y_pred3))
 
-    info_img = {}
+    '''info_img = {}
     set_ch: dict = count_characteristics(image_path)
     info_img.update(set_ch)
     df = pd.DataFrame(info_img, index=[0])
-    res = clf.predict(df)
-    return res
+    res = clf.predict(df)'''
+    return classification_report(y_test, y_pred3)
 
 
 def fast_pred(image_path) -> str:
@@ -295,5 +295,4 @@ def fast_pred(image_path) -> str:
     res = clf.predict(df)
     return res
 
-res = fast_pred('djest1\\28.jpg')
-print(res)
+
