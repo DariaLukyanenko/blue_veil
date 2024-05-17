@@ -75,16 +75,9 @@
                 </tr>
             </thead>
             <tbody>
-                {% for item in parsed_report %}
-                <tr>
-                    <td>{{ item.class }}</td>
-                    <td>{{ item.precision }}</td>
-                    <td>{{ item.recall }}</td>
-                    <td>{{ item['f1-score'] }}</td>
-                    <td>{{ item.support }}</td>
-                </tr>
-                {% endfor %}
+                {{parsed_report}}
             </tbody>
+    
         </table>
 
         <a href="{{ url_for('upload_file') }}">Upload another image</a>
